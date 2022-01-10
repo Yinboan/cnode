@@ -1,32 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <Header></Header>
+    <div class="contain">
+      <router-view name='slide'></router-view>
+      <router-view name='main'></router-view>
     </div>
-    <router-view/>
   </div>
 </template>
+<script>
+import Header from '@/components/Header.vue'
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+export default {
+  components:{
+    Header
+  }
 }
+</script>
 
-#nav {
-  padding: 30px;
+<style >
+#app{
+  background-color: #e1e1e1;
+  overflow: hidden;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.contain{
+  width: 80vw;
+  margin: 0 auto;
 }
 </style>
